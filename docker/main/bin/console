@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+#
+<?php
+// application.php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use App\Command\{ActionCommand, OtherServiceCommand};
+
+$application = new Application();
+
+$application->add(new ActionCommand());
+$application->add(new OtherServiceCommand());
+
+
+$application->run();
